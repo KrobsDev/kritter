@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kritter/constants.dart';
-import 'package:kritter/views/homepage.dart';
-import 'package:kritter/views/login_page.dart';
 import 'package:kritter/widgets/nav_Item.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -53,7 +51,9 @@ class Navbar extends StatelessWidget {
           ),
         ),
       ),
-      body: child,
+      body: Padding(
+          padding: EdgeInsets.symmetric(horizontal: kDefaultPadding * 5),
+          child: child),
     );
   }
 }

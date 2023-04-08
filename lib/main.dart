@@ -24,7 +24,6 @@ final GoRouter _router = GoRouter(
           path: '/login',
           child: const LoginPage(),
         ),
-        
       ],
     ),
   ],
@@ -51,8 +50,15 @@ class MyApp extends StatelessWidget {
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
         // primarySwatch:,
-        primaryColor: darkBg.toColor(),
-        canvasColor: darkBg.toColor(),
+        textTheme: TextTheme(
+          titleLarge: TextStyle(fontSize: kLargeFontSize, color: white),
+          bodyLarge: TextStyle(fontSize: kMediumFontSize, color: white),
+          bodyMedium: TextStyle(fontSize: kDefaultFontSize, color: white),
+          bodySmall: TextStyle(fontSize: kSmallFontSize, color: white),
+        ),
+        fontFamily: 'Inter',
+        primaryColor: darkBg,
+        canvasColor: darkBg,
       ),
       // home: const Navbar(),
     );
