@@ -7,11 +7,15 @@ import 'package:kritter/widgets/nav_Item.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class Navbar extends StatelessWidget {
-  final Widget child;
-  const Navbar({super.key, required this.child});
+  const Navbar({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final List screens = [
+      HomePage(),
+      LoginPage(),
+    ];
+    
     final Size screenSize = MediaQuery.of(context).size;
     return Scaffold(
       appBar: PreferredSize(
@@ -50,7 +54,7 @@ class Navbar extends StatelessWidget {
           ),
         ),
       ),
-      body: child,
+      body: screens[0],
     );
   }
 }

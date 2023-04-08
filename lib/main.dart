@@ -4,19 +4,29 @@ import 'package:kritter/constants.dart';
 import 'package:kritter/views/homepage.dart';
 import 'package:kritter/views/login_page.dart';
 import 'package:kritter/widgets/Navbar.dart';
-import 'package:kritter/widgets/navbar_stateful.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
-// Application Routes
-final GoRouter _router = GoRouter(routes: [
-  GoRoute(
-    path: '/',
-    builder: (context, state) => const HomePage(),
-  )
-]);
+final GoRouter _router = GoRouter(
+  initialLocation: '/',
+  routes: [
+    ShellRoute(
+      builder: (context, state, child) => Navbar(child: child),
+      routes: [
+        GoRoute(
+          path: '/',
+          builder: (context, state) => const HomePage(),
+        ),
+        GoRoute(
+          path: '/login',
+          builder: (context, state) => const LoginPage(),
+        ),
+      ],
+    ),
+  ],
+);
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -24,8 +34,8 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      // routerConfig: _router,
+    return MaterialApp.router(
+      routerConfig: _router,
       title: 'Kritter',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -42,7 +52,7 @@ class MyApp extends StatelessWidget {
         primaryColor: darkBg.toColor(),
         canvasColor: darkBg.toColor(),
       ),
-      // home: const NavbarStateful(),
+      // home: const Navbar(),
     );
   }
 }
