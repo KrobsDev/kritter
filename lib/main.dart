@@ -4,6 +4,7 @@ import 'package:kritter/constants.dart';
 import 'package:kritter/views/homepage.dart';
 import 'package:kritter/views/login_page.dart';
 import 'package:kritter/widgets/Navbar.dart';
+import 'package:kritter/widgets/custom_route.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,14 +16,15 @@ final GoRouter _router = GoRouter(
     ShellRoute(
       builder: (context, state, child) => Navbar(child: child),
       routes: [
-        GoRoute(
+        CustomGoRoute(
           path: '/',
-          builder: (context, state) => const HomePage(),
+          child: const HomePage(),
         ),
-        GoRoute(
+        CustomGoRoute(
           path: '/login',
-          builder: (context, state) => const LoginPage(),
+          child: const LoginPage(),
         ),
+        
       ],
     ),
   ],

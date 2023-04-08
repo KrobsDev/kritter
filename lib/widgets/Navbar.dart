@@ -19,14 +19,13 @@ class Navbar extends StatelessWidget {
         child: Container(
           width: screenSize.width,
           height: 70,
-          color: Colors.red,
           padding: EdgeInsets.symmetric(
             horizontal: kDefaultPadding * 5,
             vertical: kDefaultPadding,
           ),
           // decoration: BoxDecoration(),
           child: Row(
-            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             mainAxisSize: MainAxisSize.min,
             children: [
               Flexible(
@@ -35,17 +34,21 @@ class Navbar extends StatelessWidget {
               SizedBox(
                 width: kDefaultPadding * 4,
               ),
-              NavItem(
-                text: 'Home',
-                onTap: () => GoRouter.of(context).go('/'),
-              ),
-              SizedBox(
-                width: kDefaultPadding * 2,
-              ),
-              NavItem(
-                text: 'Login',
-                onTap: () => GoRouter.of(context).go('/login'),
-              ),
+              Row(
+                children: [
+                  NavItem(
+                    text: 'Home',
+                    onTap: () => GoRouter.of(context).go('/'),
+                  ),
+                  SizedBox(
+                    width: kDefaultPadding * 2,
+                  ),
+                  NavItem(
+                    text: 'Login',
+                    onTap: () => GoRouter.of(context).go('/login'),
+                  ),
+                ],
+              )
             ],
           ),
         ),
