@@ -51,9 +51,7 @@ class Navbar extends StatelessWidget {
           ),
         ),
       ),
-      body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: kDefaultPadding * 5),
-          child: child),
+      body: child,
     );
   }
 }

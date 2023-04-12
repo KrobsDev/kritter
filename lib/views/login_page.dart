@@ -17,8 +17,54 @@ class LoginPage extends StatelessWidget {
 
     return SingleChildScrollView(
       child: Stack(children: [
+        // Positioned.fill(
+        //   right: -1100,
+        //   child: SizedBox(
+        //     width: 1800,
+        //     // height: 1080,
+        //     child: Image(
+        //       image: AssetImage('assets/images/sc_circle.png'),
+        //     ),
+        //   ),
+        // ),
+        // Positioned.fill(
+        //   child: Container(
+        //       // height: 1080,
+        //         // decoration: BoxDecoration(gradient: ),
+        //       ),
+        // ),
+        Positioned(
+          top: 0,
+          right: -200,
+          child: Container(
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width / 1.5,
+            alignment: Alignment.centerRight,
+            decoration: const BoxDecoration(
+              // border: Border.all(),
+              image: DecorationImage(
+                fit: BoxFit.cover,
+                image: AssetImage('assets/images/sc_circle.png'),
+              ),
+            ),
+          ),
+        ),
+        Positioned.fill(
+            child: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                darkBg,
+                darkBg.withOpacity(0.78),
+              ],
+            ),
+          ),
+        )),
         Padding(
-          padding: EdgeInsets.symmetric(vertical: kDefaultPadding * 5),
+          padding: EdgeInsets.symmetric(
+            vertical: kDefaultPadding * 5,
+            horizontal: kDefaultPadding * 5,
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

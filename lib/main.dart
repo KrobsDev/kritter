@@ -56,7 +56,7 @@ class MyApp extends StatelessWidget {
           bodyMedium: TextStyle(fontSize: kDefaultFontSize, color: white),
           bodySmall: TextStyle(fontSize: kSmallFontSize, color: white),
         ),
-        fontFamily: 'Inter',
+        // fontFamily: 'Inter',
         primaryColor: darkBg,
         canvasColor: darkBg,
       ),
