@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:kritter/constants.dart';
 import 'package:kritter/widgets/custom_button.dart';
 import 'package:kritter/widgets/custom_textfield.dart';
@@ -17,22 +18,6 @@ class LoginPage extends StatelessWidget {
 
     return SingleChildScrollView(
       child: Stack(children: [
-        // Positioned.fill(
-        //   right: -1100,
-        //   child: SizedBox(
-        //     width: 1800,
-        //     // height: 1080,
-        //     child: Image(
-        //       image: AssetImage('assets/images/sc_circle.png'),
-        //     ),
-        //   ),
-        // ),
-        // Positioned.fill(
-        //   child: Container(
-        //       // height: 1080,
-        //         // decoration: BoxDecoration(gradient: ),
-        //       ),
-        // ),
         Positioned(
           top: 0,
           right: -200,
@@ -90,6 +75,7 @@ class LoginPage extends StatelessWidget {
                     width: 5,
                   ),
                   GestureDetector(
+                    onTap: () => context.go('/signup'),
                     child: CustomText(
                       text: 'Sign up',
                       style: TextStyle(color: aGreen, fontWeight: medium),

@@ -5,12 +5,16 @@ class CustomTextField extends StatelessWidget {
   final String placeholder;
   final TextEditingController controller;
   final Icon? icon;
+  final void Function()? onTap;
+  final bool? readonly;
 
   const CustomTextField({
     super.key,
     required this.placeholder,
     required this.controller,
     this.icon,
+    this.onTap,
+    this.readonly,
   });
 
   @override
@@ -21,6 +25,8 @@ class CustomTextField extends StatelessWidget {
         style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: white),
         controller: controller,
         cursorColor: grey1,
+        onTap: onTap,
+        readOnly: readonly ?? false,
         decoration: InputDecoration(
           filled: true,
           suffixIcon: icon ??

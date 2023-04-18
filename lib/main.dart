@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:kritter/constants.dart';
 import 'package:kritter/views/homepage.dart';
 import 'package:kritter/views/login_page.dart';
+import 'package:kritter/views/signup_page.dart';
 import 'package:kritter/widgets/Navbar.dart';
 import 'package:kritter/widgets/custom_route.dart';
 
@@ -23,6 +24,10 @@ final GoRouter _router = GoRouter(
         CustomGoRoute(
           path: '/login',
           child: const LoginPage(),
+        ),
+        CustomGoRoute(
+          path: '/signup',
+          child: const SignUpPage(),
         ),
       ],
     ),

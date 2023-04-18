@@ -6,6 +6,7 @@ class CustomText extends StatelessWidget {
   final bool? isSmall;
   final TextStyle? style;
   final String text;
+  
   const CustomText({
     super.key,
     this.isTitle = false,
